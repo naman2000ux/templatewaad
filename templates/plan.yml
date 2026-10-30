@@ -7,9 +7,9 @@ stages:
         inputs:
             provider: 'azurerm'
             command: 'init'
-            backendServiceArm: 'svc1'
+            backendServiceArm: 'git-svc'
             backendAzureRmResourceGroupName: 'heron-rg'
-            backendAzureRmStorageAccountName: 'sto5769'
+            backendAzureRmStorageAccountName: ${{ parameters.storage-account}}
             backendAzureRmContainerName: 'tera'
             backendAzureRmKey: 'prod.tfstate'
       - task: TerraformTask@5
